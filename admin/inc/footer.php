@@ -6,7 +6,7 @@
 		<!--End Back To Top Button-->
 			
 	<footer class="page-footer">
-				<p class="mb-0">Copyright © 2021. All right reserved.</p>
+				<p class="mb-0">Copyright © 2025. All right reserved.</p>
 			</footer>
 		</div>
 		<!--end wrapper-->

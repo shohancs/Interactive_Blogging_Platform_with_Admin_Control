@@ -239,16 +239,7 @@
 												  ?>
 												  
 												</select>
-											</div>											
-
-											<div class="mb-3">
-												<label for="">Status</label>
-												<select class="form-select" name="status" aria-label="">
-												  <option value="1">Please Select the User Status</option>
-												  <option value="1">Active</option>
-												  <option value="0">InActive</option>
-												</select>
-											</div>
+											</div>	
 
 											<div class="mb-3">
 												<label for="">Image</label>
@@ -265,6 +256,7 @@
 
 											<div class="mb-3">
 												<div class="d-grid gap-2">
+													<input type="hidden" name="status" value="3">
 													<input type="submit" name="addPost" class="btn btn-primary" value="Add New Post">
 												</div>
 											</div>
