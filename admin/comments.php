@@ -78,7 +78,7 @@
 														      			$post_id 		= $row['post_id'];
 																		$title 			= $row['title'];
 
-														      			echo $title;
+														      			echo substr($title, 0, 40);
 														      		}
 
 														      	?>
@@ -346,7 +346,7 @@
 														      			$post_id 		= $row['post_id'];
 																		$title 			= $row['title'];
 
-														      			echo $title;
+														      			echo substr($title, 0, 40);
 														      		}
 
 														      	?>

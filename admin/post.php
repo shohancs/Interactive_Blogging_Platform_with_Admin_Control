@@ -82,9 +82,9 @@
 																	else {
 																		echo '<img src="assets/images/posts/default.png" style="width: 40px; ">';
 																	}
-																?>
+																?> 
 															  </td>
-															  <td><?php echo $title; ?></td>
+															  <td><?php echo substr($title, 0, 40) ?>...</td>
 														      <td>
 														      	<?php  
 														      		$readCat_Sql = "SELECT * FROM category WHERE cat_id='$category_id'";
@@ -243,7 +243,7 @@
 
 											<div class="mb-3">
 												<label for="">Image</label>
-												<input type="file" name="image" class="form-control" >
+												<input type="file" name="image" class="form-control" required>
 											</div>
 										</div>
 
@@ -288,7 +288,7 @@
 								$postAdd_query = mysqli_query($db, $postAdd_sql);
 
 								if ($postAdd_query) {
-									header("Location: post.php?do=Manage");
+									header("Location: pendingPost.php?do=Pending");
 								}
 								else {
 									die("mysqli Error!" . mysqli_error($db));
@@ -561,7 +561,7 @@
 																	}
 																?>
 															  </td>
-															  <td><?php echo $title; ?></td>
+															  <td><?php echo substr($title, 0, 50) ?>...</td>
 														      <td><?php echo $category_id; ?></td>
 														      <td><?php echo $author_id; ?></td>
 														      <td><?php echo $tags; ?></td>

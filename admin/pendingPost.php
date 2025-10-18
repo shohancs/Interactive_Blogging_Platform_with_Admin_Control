@@ -84,7 +84,7 @@
 																	}
 																?>
 															  </td>
-															  <td><?php echo $title; ?></td>
+															  <td><?php echo substr($title, 0, 50) ?>...</td>
 														      <td>
 														      	<?php  
 														      		$readCat_Sql = "SELECT * FROM category WHERE cat_id='$category_id'";
@@ -191,6 +191,9 @@
 								$author_id 		= $row['author_id'];
 								$status 		= $row['status'];
 								$post_date 		= $row['post_date'];
+								$title 			= $row['title'];
+								$tags 			= $row['tags'];
+								$post_desc 		= $row['post_desc'];
 								?>
 								<!-- Top Icon -->
 						<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -254,8 +257,9 @@
 											<div class="mb-3">
 												<label for="">Status</label>
 												<select class="form-select" name="status" aria-label="">
-												  <option value="1">Please Select the User Status</option>
+												  <option value="3">Please Select the User Status</option>
 												  <option value="1" <?php if($status == 1){echo "selected";} ?>>Active</option>
+												  <option value="3" <?php if($status == 3){echo "selected";} ?>>Pending</option>
 												  <option value="0" <?php if($status == 0){echo "selected";} ?>>InActive</option>
 												</select>
 											</div>
@@ -263,6 +267,9 @@
 											<div class="mb-3">
 												<div class="d-grid gap-2">
 													<input type="hidden" name="postId" value="<?php echo $post_id; ?>">
+													<input type="hidden" name="title" value="<?php echo $title; ?>">
+													<input type="hidden" name="tags" value="<?php echo $tags; ?>">
+													<input type="hidden" name="post_desc" value="<?php echo $post_desc; ?>">
 													<input type="submit" name="updatePost" class="btn btn-primary" value="Save Changes">
 												</div>
 											</div>
@@ -287,7 +294,7 @@
 							$status 	= mysqli_real_escape_string($db, $_POST['status']);
 							$post_desc 	= mysqli_real_escape_string($db, $_POST['post_desc']);
 
-							$postupdate_sql = "UPDATE post SET category_id='$cate_id', author_id='', status='$status' WHERE post_id='$postId' ";
+							$postupdate_sql = "UPDATE post SET title='$title', tags='$tags', post_desc='$post_desc', category_id='$cate_id', author_id='', status='$status' WHERE post_id='$postId' ";
 								$postUpdate_query = mysqli_query($db, $postupdate_sql);
 
 								if ($postUpdate_query) {
