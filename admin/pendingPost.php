@@ -196,26 +196,26 @@
 								$post_desc 		= $row['post_desc'];
 								?>
 								<!-- Top Icon -->
-						<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-							<div class="breadcrumb-title pe-3">Tables</div>
-							<div class="ps-3">
-								<nav aria-label="breadcrumb">
-									<ol class="breadcrumb mb-0 p-0">
-										<li class="breadcrumb-item"><a href="post.php?do=Manage"><i class="bx bx-home-alt"></i></a>
-										</li>
-										<li class="breadcrumb-item active" aria-current="page">Data Table</li>
-									</ol>
-								</nav>
-							</div>					
-						</div>
-						<!-- Top Icon -->
+								<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+									<div class="breadcrumb-title pe-3">Tables</div>
+									<div class="ps-3">
+										<nav aria-label="breadcrumb">
+											<ol class="breadcrumb mb-0 p-0">
+												<li class="breadcrumb-item"><a href="post.php?do=Manage"><i class="bx bx-home-alt"></i></a>
+												</li>
+												<li class="breadcrumb-item active" aria-current="page">Data Table</li>
+											</ol>
+										</nav>
+									</div>					
+								</div>
+								<!-- Top Icon -->
 
-						<h6 class="mb-3 text-uppercase">Update Post Information</h6><hr>
+								<h6 class="mb-3 text-uppercase">Update Post Information</h6><hr>
 
 						<!-- ########## START: MAIN BODY ########## -->
 						<div class="card">
 							<div class="card-body">
-								<form action="post.php?do=Update" method="POST" enctype="multipart/form-data">
+								<form action="pendingPost.php?do=Update" method="POST" enctype="multipart/form-data">
 									<div class="row">
 										<div class="col-lg-4">
 
@@ -270,6 +270,7 @@
 													<input type="hidden" name="title" value="<?php echo $title; ?>">
 													<input type="hidden" name="tags" value="<?php echo $tags; ?>">
 													<input type="hidden" name="post_desc" value="<?php echo $post_desc; ?>">
+													<input type="hidden" name="author_id" value="<?php echo $author_id; ?>">
 													<input type="submit" name="updatePost" class="btn btn-primary" value="Save Changes">
 												</div>
 											</div>
@@ -284,27 +285,26 @@
 					}
 
 					else if ( $do == "Update" ) {
-						if (isset($_GET['user_id'])) {
-							if (isset($_POST['updatePost'])) {
-							$postId 	= mysqli_real_escape_string($db, $_POST['postId']);
-							$title 		= mysqli_real_escape_string($db, $_POST['title']);
-							$cate_id 	= mysqli_real_escape_string($db, $_POST['cate_id']);
-							$author_id 	= mysqli_real_escape_string($db, $_POST['author_id']);;
-							$tags 		= mysqli_real_escape_string($db, $_POST['tags']);
-							$status 	= mysqli_real_escape_string($db, $_POST['status']);
-							$post_desc 	= mysqli_real_escape_string($db, $_POST['post_desc']);
+						if (isset($_POST['updatePost'])) {
+								$postId 	= mysqli_real_escape_string($db, $_POST['postId']);
+								$title 		= mysqli_real_escape_string($db, $_POST['title']);
+								$cate_id 	= mysqli_real_escape_string($db, $_POST['cate_id']);
+								$author_id 	= mysqli_real_escape_string($db, $_POST['author_id']);;
+								$tags 		= mysqli_real_escape_string($db, $_POST['tags']);
+								$status 	= mysqli_real_escape_string($db, $_POST['status']);
+								$post_desc 	= mysqli_real_escape_string($db, $_POST['post_desc']);
 
-							$postupdate_sql = "UPDATE post SET title='$title', tags='$tags', post_desc='$post_desc', category_id='$cate_id', author_id='', status='$status' WHERE post_id='$postId' ";
+								$postupdate_sql = "UPDATE post SET title='$title', tags='$tags', post_desc='$post_desc', category_id='$cate_id', author_id='$author_id', status='$status' WHERE post_id='$postId' ";
+								echo $postupdate_sql;
 								$postUpdate_query = mysqli_query($db, $postupdate_sql);
 
 								if ($postUpdate_query) {
-									header("Location: pendingPost.php?do=Pending");
+									header("Location: post.php?do=Manage");
 								}
 								else {
 									die("mysqli Error!" . mysqli_error($db));
 								}
-						}
-						}
+							}
 						
 					}
 

@@ -245,6 +245,16 @@
 												<label for="">Image</label>
 												<input type="file" name="image" class="form-control" required>
 											</div>
+
+											<div class="mb-3">
+												<label for="">Status</label>
+												<select class="form-select" name="status" required>
+												  <option value="">Please Select the Status</option>
+												  <option value="1">Active</option>
+												  <option value="3">Pending</option>
+												  <option value="0">InActive</option>
+												</select>
+											</div>
 										</div>
 
 										<div class="col-lg-8">
@@ -256,7 +266,6 @@
 
 											<div class="mb-3">
 												<div class="d-grid gap-2">
-													<input type="hidden" name="status" value="3">
 													<input type="submit" name="addPost" class="btn btn-primary" value="Add New Post">
 												</div>
 											</div>
@@ -288,7 +297,7 @@
 								$postAdd_query = mysqli_query($db, $postAdd_sql);
 
 								if ($postAdd_query) {
-									header("Location: pendingPost.php?do=Pending");
+									header("Location: post.php?do=Manage");
 								}
 								else {
 									die("mysqli Error!" . mysqli_error($db));
@@ -321,107 +330,108 @@
 								$post_date 		= $row['post_date'];
 								?>
 								<!-- Top Icon -->
-						<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-							<div class="breadcrumb-title pe-3">Tables</div>
-							<div class="ps-3">
-								<nav aria-label="breadcrumb">
-									<ol class="breadcrumb mb-0 p-0">
-										<li class="breadcrumb-item"><a href="post.php?do=Manage"><i class="bx bx-home-alt"></i></a>
-										</li>
-										<li class="breadcrumb-item active" aria-current="page">Data Table</li>
-									</ol>
-								</nav>
-							</div>					
-						</div>
-						<!-- Top Icon -->
+								<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+									<div class="breadcrumb-title pe-3">Tables</div>
+									<div class="ps-3">
+										<nav aria-label="breadcrumb">
+											<ol class="breadcrumb mb-0 p-0">
+												<li class="breadcrumb-item"><a href="post.php?do=Manage"><i class="bx bx-home-alt"></i></a>
+												</li>
+												<li class="breadcrumb-item active" aria-current="page">Data Table</li>
+											</ol>
+										</nav>
+									</div>					
+								</div>
+								<!-- Top Icon -->
 
-						<h6 class="mb-3 text-uppercase">Update Post Information</h6><hr>
+								<h6 class="mb-3 text-uppercase">Update Post Information</h6><hr>
 
-						<!-- ########## START: MAIN BODY ########## -->
-						<div class="card">
-							<div class="card-body">
-								<form action="post.php?do=Update" method="POST" enctype="multipart/form-data">
-									<div class="row">
-										<div class="col-lg-4">
-											<div class="mb-3">
-												<label for="">Post Title</label>
-												<input type="text" name="title" class="form-control" required autocomplete="off" autofocus value="<?php echo $title; ?>">
-											</div>
+								<!-- ########## START: MAIN BODY ########## -->
+								<div class="card">
+									<div class="card-body">
+										<form action="post.php?do=Update" method="POST" enctype="multipart/form-data">
+											<div class="row">
+												<div class="col-lg-4">
+													<div class="mb-3">
+														<label for="">Post Title</label>
+														<input type="text" name="title" class="form-control" required autocomplete="off" autofocus value="<?php echo $title; ?>">
+													</div>
 
-											<div class="mb-3">
-												<label for="">Meta Tags [ Use Comma (,) For Each Tag ]</label>
-												<input type="text" name="tags" class="form-control" required autocomplete="off" autofocus value="<?php echo $tags; ?>">
-											</div>
+													<div class="mb-3">
+														<label for="">Meta Tags [ Use Comma (,) For Each Tag ]</label>
+														<input type="text" name="tags" class="form-control" required autocomplete="off" autofocus value="<?php echo $tags; ?>">
+													</div>
 
-											<div class="mb-3">
-												<label for="">Category Name</label>
-												<select class="form-select" name="cate_id">
-												  <option value="">Please Select the Category</option>
-												  <?php  
-												  	$sql = "SELECT * FROM category WHERE is_parent=0 AND status=1";
-												  	$read = mysqli_query($db, $sql);
+													<div class="mb-3">
+														<label for="">Category Name</label>
+														<select class="form-select" name="cate_id">
+														  <option value="">Please Select the Category</option>
+														  <?php  
+														  	$sql = "SELECT * FROM category WHERE is_parent=0 AND status=1";
+														  	$read = mysqli_query($db, $sql);
 
-													while ($row = mysqli_fetch_assoc($read)) {
-														$pcat_id 	= $row['cat_id'];
-														$pcat_name 	= $row['cat_name'];
-														?>
-														<option value="<?php echo $pcat_id; ?>"
-															<?php if ( $category_id == $pcat_id ){ echo 'selected'; } ?>
-														><?php echo $pcat_name; ?></option>
-														<?php
-														// for sub Category
-														$sub_sql = "SELECT * FROM category WHERE is_parent=$pcat_id AND status=1";
-													  	$read_sub = mysqli_query($db, $sub_sql);
-
-													  	while ($row = mysqli_fetch_assoc($read_sub)){
-													  		$ccat_id 	= $row['cat_id'];
-															$ccat_name 	= $row['cat_name'];
+															while ($row = mysqli_fetch_assoc($read)) {
+																$pcat_id 	= $row['cat_id'];
+																$pcat_name 	= $row['cat_name'];
 																?>
-															<option value="<?php echo $ccat_id; ?>"
-																<?php if ( $category_id == $ccat_id ){ echo 'selected'; } ?>
-															><?php echo " -- " . $ccat_name; ?></option>
-																<?php 
-													  	}
-													}
-												  ?>
-												  
-												</select>
-											</div>											
+																<option value="<?php echo $pcat_id; ?>"
+																	<?php if ( $category_id == $pcat_id ){ echo 'selected'; } ?>
+																><?php echo $pcat_name; ?></option>
+																<?php
+																// for sub Category
+																$sub_sql = "SELECT * FROM category WHERE is_parent=$pcat_id AND status=1";
+															  	$read_sub = mysqli_query($db, $sub_sql);
 
-											<div class="mb-3">
-												<label for="">Status</label>
-												<select class="form-select" name="status" aria-label="">
-												  <option value="1">Please Select the User Status</option>
-												  <option value="1" <?php if($status == 1){echo "selected";} ?>>Active</option>
-												  <option value="0" <?php if($status == 0){echo "selected";} ?>>InActive</option>
-												</select>
-											</div>
+															  	while ($row = mysqli_fetch_assoc($read_sub)){
+															  		$ccat_id 	= $row['cat_id'];
+																	$ccat_name 	= $row['cat_name'];
+																		?>
+																	<option value="<?php echo $ccat_id; ?>"
+																		<?php if ( $category_id == $ccat_id ){ echo 'selected'; } ?>
+																	><?php echo " -- " . $ccat_name; ?></option>
+																		<?php 
+															  	}
+															}
+														  ?>
+														  
+														</select>
+													</div>											
 
-											<div class="mb-3">
-												<label for="">Image</label>
-												<input type="file" name="image" class="form-control" >
-											</div>
-										</div>
+													<div class="mb-3">
+														<label for="">Status</label>
+														<select class="form-select" name="status" aria-label="">
+														  <option value="1">Please Select the User Status</option>
+														  <option value="1" <?php if($status == 1){echo "selected";} ?>>Active</option>
+														  <option value="0" <?php if($status == 0){echo "selected";} ?>>InActive</option>
+														</select>
+													</div>
 
-										<div class="col-lg-8">
-											
-											<div class="mb-3">
-												<label for="">Description</label>
-												<textarea name="post_desc" class="form-control"  autocomplete="off" autofocus id="editor1" placeholder="category description.."><?php echo $post_desc; ?></textarea>
-											</div>											
+													<div class="mb-3">
+														<label for="">Image</label>
+														<input type="file" name="image" class="form-control" >
+													</div>
+												</div>
 
-											<div class="mb-3">
-												<div class="d-grid gap-2">
-													<input type="hidden" name="postId" value="<?php echo $post_id; ?>">
-													<input type="submit" name="updatePost" class="btn btn-primary" value="Save Changes">
+												<div class="col-lg-8">
+													
+													<div class="mb-3">
+														<label for="">Description</label>
+														<textarea name="post_desc" class="form-control"  autocomplete="off" autofocus id="editor1" placeholder="category description.."><?php echo $post_desc; ?></textarea>
+													</div>											
+
+													<div class="mb-3">
+														<div class="d-grid gap-2">
+															<input type="hidden" name="postId" value="<?php echo $post_id; ?>">
+															<input type="hidden" name="author_id" value="<?php echo $author_id; ?>">
+															<input type="submit" name="updatePost" class="btn btn-primary" value="Save Changes">
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
-								</form>
-							</div>
-						</div>				
-						<!-- ########## END: MAIN BODY ########## -->
+								</div>				
+								<!-- ########## END: MAIN BODY ########## -->
 							<?php }
 						}
 					}
@@ -431,7 +441,7 @@
 							$postId 		= mysqli_real_escape_string($db, $_POST['postId']);
 							$title 		= mysqli_real_escape_string($db, $_POST['title']);
 							$cate_id 	= mysqli_real_escape_string($db, $_POST['cate_id']);
-							$author_id 	= $_SESSION['user_id'];
+							$author_id 	= mysqli_real_escape_string($db, $_POST['author_id']);
 							$tags 		= mysqli_real_escape_string($db, $_POST['tags']);
 							$status 	= mysqli_real_escape_string($db, $_POST['status']);
 							$post_desc 	= mysqli_real_escape_string($db, $_POST['post_desc']);
@@ -562,8 +572,34 @@
 																?>
 															  </td>
 															  <td><?php echo substr($title, 0, 50) ?>...</td>
-														      <td><?php echo $category_id; ?></td>
-														      <td><?php echo $author_id; ?></td>
+														      <td>
+														      	<?php  
+														      		$readCat_Sql = "SELECT * FROM category WHERE cat_id='$category_id'";
+														      		$readCat_Quary = mysqli_query($db, $readCat_Sql);
+
+														      		while( $row = mysqli_fetch_assoc($readCat_Quary) ){
+														      			$cc_id 	 = $row['cat_id'];
+														      			$cc_name = $row['cat_name'];
+
+														      			echo $cc_name;
+														      		}
+
+														      	?>
+														      </td>
+														      <td>
+														      	<?php  
+														      		$readUser_Sql = "SELECT * FROM users WHERE user_id='$author_id'";
+														      		$readUser_Quary = mysqli_query($db, $readUser_Sql);
+
+														      		while( $row = mysqli_fetch_assoc($readUser_Quary) ){
+														      			$auth_id 	 = $row['user_id'];
+														      			$auth_name = $row['fullname'];
+
+														      			echo $auth_name;
+														      		}
+
+														      	?>
+														      </td>
 														      <td><?php echo $tags; ?></td>
 														      <td>
 														      	<?php  

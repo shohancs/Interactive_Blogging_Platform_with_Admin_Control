@@ -119,7 +119,7 @@
 											$postAdd_query = mysqli_query($db, $postAdd_sql);
 
 											if ($postAdd_query) {
-												header("Location: index.php");
+												header("Location: userpost.php");
 											}
 											else {
 												die("mysqli Error!" . mysqli_error($db));
