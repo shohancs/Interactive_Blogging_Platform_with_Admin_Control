@@ -4,7 +4,7 @@
 				<span>Get in Touch</span>
 			</div>
 			<div class="row py-5 my-4">
-				<div class="col-md-4 col-lg-4">
+				<div class="col-md-3 col-lg-3">
 					<h5 class="text-3 mb-3">NEWSLETTER</h5>
 					<p class="pr-1">Keep up on our always evolving product features and technology. Enter your e-mail address and subscribe to our newsletter.</p>
 					<div class="alert alert-success d-none" id="newsletterSuccess">
@@ -13,17 +13,17 @@
 					<div class="alert alert-danger d-none" id="newsletterError"></div>
 					
 				</div>
-				<div class="col-md-4 col-lg-4">
+				<div class="col-md-3 col-lg-3">
 					<div class="contact-details">
 						<h5 class="text-3 mb-3">CONTACT US</h5>
 						<ul class="list list-icons list-icons-lg">
-							<li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0">234 Street Name, City Name</p></li>
+							<li class="mb-1"><i class="far fa-dot-circle text-color-primary"></i><p class="m-0">234 Street Dhaka, Bangladesh</p></li>
 							<li class="mb-1"><i class="fab fa-whatsapp text-color-primary"></i><p class="m-0"><a href="tel:8001234567">(800) 123-4567</a></p></li>
 							<li class="mb-1"><i class="far fa-envelope text-color-primary"></i><p class="m-0"><a href="mailto:mail@example.com">mail@example.com</a></p></li>
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-4 col-lg-4">
+				<div class="col-md-3 col-lg-3">
 					<h5 class="text-3 mb-3">FOLLOW US</h5>
 					<ul class="social-icons">
 						<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
@@ -31,13 +31,20 @@
 						<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 					</ul>
 				</div>
+
+				<div class="col-md-3 col-lg-3 ">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14612.975403928907!2d90.497437!3d23.70298445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1760906684499!5m2!1sen!2sbd" width="380" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
 			<div class="container py-2">
-				<div class="row py-4">
+				<div class="row py-4" style="justify-content: space-between;">
 					<div class="text-center">
-						<p class="text-center">© Copyright 2023. All Rights Reserved.</p>
+						<p class="text-center">© Copyright 2025. All Rights Reserved.</p>
+					</div>
+					<div class="text-center">
+						<p class="text-center">Developed By <a href="https://shohancs.com/" target="_blank">shohancs.com</a></p>
 					</div>
 				</div>
 			</div>
