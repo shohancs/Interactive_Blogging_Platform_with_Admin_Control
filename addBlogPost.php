@@ -17,12 +17,12 @@
 
 						<ul class="breadcrumb d-block text-center">
 							<li><a href="index.php">Home</a></li>
-							<li class="active">Update</li>
+							<li class="active">Update</li> 
 						</ul>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> 
 
 		<section>
 			<div class="container">
