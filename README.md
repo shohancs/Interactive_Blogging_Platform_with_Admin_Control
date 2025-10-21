@@ -125,9 +125,9 @@ Other main tables: `users`, `post`, `comments`
 ## 🧑‍💻 Author
 
 **Shohanur Rahman Shohan**
-🎓 Computer Science Graduate | 💼 Full Stack Developer
-🌐 [Portfolio](https://shohancs.com)
-📧 Email: `shohancs.dev@gmail.com`
+🎓 Computer Science Graduate | 💼 Full Stack Developer<br>
+🌐 [Portfolio](https://shohancs.com)<br>
+📧 Email: `shohancs.dev@gmail.com`<br>
 🐙 GitHub: [github.com/shohancs]([shohancs](https://github.com/shohancs))
 
 ---
