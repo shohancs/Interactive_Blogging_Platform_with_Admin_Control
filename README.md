@@ -3,13 +3,14 @@
 ![Untitled design (5)](https://github.com/user-attachments/assets/28076356-56e1-46d3-87f5-311c5d2ca368)
 
 
-**Live Demo:** [Main Website](https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/)
+**Live Demo** → https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/ <br>
+**GitHub** → https://github.com/shohancs/Interactive_Blogging_Platform_with_Admin_Control
 
 **User Login:** [Login Page](https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/login.php)
-🧑‍💻 Dummy Credentials — Email: `user@gmail.com` | Password: `12345`
+🧑‍💻  — Email: `user@gmail.com` | Password: `12345`
 
 **Admin Login:** [Admin Panel](https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/admin/)
-👨‍💼 Dummy Credentials — Email: `admin@gmail.com` | Password: `12345`
+👨‍💼  — Email: `admin@gmail.com` | Password: `12345`
 
 **Database Name:** `news_blog_portal`
 
@@ -21,8 +22,6 @@ A **modern, interactive blogging platform** that empowers users to publish their
 
 This project is built with scalability and clean architecture in mind — ensuring a smooth, secure, and responsive experience for both readers and administrators.
 
----
-
 ## 🚀 Key Features
 
 * 🧾 **User-Generated Blogs** — Registered users can create, edit, and manage their posts.
@@ -32,6 +31,18 @@ This project is built with scalability and clean architecture in mind — ensuri
 * 🔐 **Authentication System** — Secure login, registration, and session management.
 * 📱 **Responsive UI** — Works seamlessly across desktop, tablet, and mobile.
 * ⚙️ **Status Control** — Active/Inactive state management for posts and categories.
+
+---
+## This Project Stands Out (Recruiter Magnet Points)
+
+- Full CRUD + Soft Delete + Status Management
+- Role-based access (User vs Super Admin)
+- Nested Category System with Parent-Child Hierarchy
+- Real-time comment interaction
+- Production-ready responsive design (mobile-first)
+- Secure authentication with session hijacking protection
+
+This is not just another blog – it's a complete content management system disguised as a learning project.
 
 ---
 
@@ -54,48 +65,12 @@ This project is built with scalability and clean architecture in mind — ensuri
 1. **Clone the Repository:**
 
 ```bash
-git clone https://github.com/<your-username>/Interactive_Blogging_Platform_with_Admin_Control.git
+git clone https://github.com/shohancs/Interactive_Blogging_Platform_with_Admin_Control.git 
 cd Interactive_Blogging_Platform_with_Admin_Control
+
 ```
 
-2. **Install Dependencies:**
-
-```bash
-composer install
-cp .env.example .env
-php artisan key:generate
-```
-
-3. **Configure Database:**
-
-* Open `.env` file and update database credentials:
-
-  ```env
-  DB_DATABASE=news_blog_portal
-  DB_USERNAME=your_username
-  DB_PASSWORD=your_password
-  ```
-* Run migration & seeding:
-
-  ```bash
-  php artisan migrate --seed
-  ```
-
-4. **Frontend Setup:**
-
-```bash
-npm install
-npm run dev   # for local dev
-npm run build # for production
-```
-
-5. **Run Application:**
-
-```bash
-php artisan serve
-```
-
-Access the app at: **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
+Access the app at: **localhost/projects/Interactive_Blogging_Platform_with_Admin_Control**
 
 ---
 
@@ -115,24 +90,16 @@ Other main tables: `users`, `post`, `comments`
 
 ---
 
-## 💡 Future Enhancements
-
-* 🤖 **AI Integration** — Auto title suggestion & content summary using free AI APIs
-* 📝 Rich Text Editor (CKEditor or Quill)
-* 🌍 Multi-language support
-* 🔔 Real-time notification system
-* 📊 Analytics dashboard for admins
-
----
-
 ## 🧑‍💻 Author
 
-**Shohanur Rahman Shohan**
-🎓 Computer Science Graduate | 💼 Full Stack Developer<br>
-🌐 [Portfolio](https://shohancs.com)<br>
-📧 Email: `shohancs.dev@gmail.com`<br>
-🐙 GitHub: [github.com/shohancs]([shohancs](https://github.com/shohancs))
+**Contact**  
+Email → shohancs.dev@gmail.com <br>
+Website → (https://shohancs.com/) <br>
+LinkedIn → [https://linkedin.com/in/shohancs](https://www.linkedin.com/in/shohancs/)
+
+
+## License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg?style=flat-square)](https://opensource.org/licenses/MIT)      
 
 ---
-
-*Made with ❤️ by Shohanur Rahman Shohan — for learning, portfolio, and professional showcase.*
