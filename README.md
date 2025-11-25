@@ -1,5 +1,8 @@
 # Interactive Blogging Platform with Admin Control
 
+![Untitled design (5)](https://github.com/user-attachments/assets/28076356-56e1-46d3-87f5-311c5d2ca368)
+
+
 **Live Demo:** [Main Website](https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/)
 
 **User Login:** [Login Page](https://shohancs.com/projects/Interactive_Blogging_Platform_with_Admin_Control/login.php)
