@@ -91,8 +91,9 @@ Other main tables: `users`, `post`, `comments`
 ---
 
 ## 🧑‍💻 Author
+**Shohanur Rahman Shohan**
 
-**Contact**  
+**Contact** 
 Email → shohancs.dev@gmail.com <br>
 Website → (https://shohancs.com/) <br>
 LinkedIn → [https://linkedin.com/in/shohancs](https://www.linkedin.com/in/shohancs/)
