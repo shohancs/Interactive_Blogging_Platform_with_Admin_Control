@@ -90,13 +90,17 @@ Other main tables: `users`, `post`, `comments`
 
 ---
 
-## 🧑‍💻 Author
-**Shohanur Rahman Shohan**
+## 👨‍💻 Developer / Owner
 
-**Contact** 
-Email → shohancs.dev@gmail.com <br>
-Website → (https://shohancs.com/) <br>
-LinkedIn → [https://linkedin.com/in/shohancs](https://www.linkedin.com/in/shohancs/)
+**Shohanur Rahman Shohan**  
+Full-Stack Software Engineer  
+Available for Remote, Freelance & Full-time roles
+
+- 🌐 Portfolio: https://shohancs.com  
+- 📧 Email: **shohancs.dev@gmail.com**  
+- 🔗 LinkedIn: https://linkedin.com/in/shohancs  
+
+---
 
 
 ## License
